@@ -6,7 +6,8 @@ jobs:
 
   first-jobs:
     runs-on: ubuntu-latest
-
+    outputs:
+      salida: ${{ steps.step_1.outputs.my_variable }} # esto es para que se pueda usar el resultado del primer job en el segundo job
     steps:
     - name: Crear variable
       id: step_1
@@ -18,8 +19,10 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }} # esto hace que se ejecute solo si se hace un push a la rama main (solo un if)
     needs: first-jobs # este hace que se ejecute después del primer job para que se pueda usar el resultado del primer job depende de este
     # si no se pone, se ejecuta en paralelo
+    env:
+      Salida: ${{ needs.first-jobs.outputs.salida }} # esto es para que se pueda usar el resultado del primer job en el segundo job
     runs-on: ubuntu-latest
 
     steps:
     - name: Hola Mundo
-      run: echo "hola mundo 2"
+      run: echo "hola mundo 2 $SALIDA" # esto es para que se pueda usar el resultado del primer job en el segundo job
