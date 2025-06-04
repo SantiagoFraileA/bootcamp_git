@@ -4,7 +4,13 @@ on: push
 
 jobs:
   first-jobs:
-    runs-on: ubuntu-s
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Hola Mundo
+      run: echo "Hola Mundo"
+  second-jobs:
+    runs-on: ubuntu-latest
 
     steps:
     - name: Hola Mundo
