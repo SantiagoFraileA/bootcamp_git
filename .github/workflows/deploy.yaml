@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: working
-      id: step1 # esto crea un id para el step que se puede usar en otros steps
+      id: step_1 # esto crea un id para el step que se puede usar en otros steps
       run: echo "my_variable=Hola Mundo" >> $GITHUB_OUTPUT # esto crea una variable de salida que se puede usar en otros jobs
     # se puede usar en otros jobs con ${{ needs.first-jobs.outputs.my_variable }}
 
     - name: step2
-      uses: echo "${{ steps.step1.outputs.my_variable }}" # esto usa la variable de salida creada en el primer step
+      uses: echo "${{ steps.step_1.outputs.my_variable }}" # esto usa la variable de salida creada en el primer step
 
   second-jobs:
     if: ${{ github.ref == 'refs/heads/main' }} # esto hace que se ejecute solo si se hace un push a la rama main (solo un if)
