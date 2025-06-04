@@ -3,16 +3,23 @@ name: deploy to server
 on: push
 
 jobs:
+
   first-jobs:
     runs-on: ubuntu-latest
+
+    env:
+      name: bootcamp-git
 
     steps:
     - name: ccheckout
       uses: ls -al
+
     - name: action
       uses: actions/checkout@v4
+
     - name: archivos
       uses: ls -al
+
   second-jobs:
     if: ${{ github.ref == 'refs/heads/main' }} # esto hace que se ejecute solo si se hace un push a la rama main (solo un if)
     needs: first-jobs # este hace que se ejecute después del primer job para que se pueda usar el resultado del primer job depende de este
