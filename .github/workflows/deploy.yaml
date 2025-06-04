@@ -10,6 +10,7 @@ jobs:
     - name: Hola Mundo
       run: echo "Hola Mundo"
   second-jobs:
+    needs: first-jobs
     runs-on: ubuntu-latest
 
     steps:
