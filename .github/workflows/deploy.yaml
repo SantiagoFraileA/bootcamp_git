@@ -7,9 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Hola Mundo
-      run: echo "Hola Mundo"
-    - name: intento archivos
+    - name: ccheckout
       uses: ls -al
     - name: action
       uses: actions/checkout@v4
