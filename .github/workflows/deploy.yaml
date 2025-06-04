@@ -7,7 +7,8 @@ jobs:
   first-jobs:
     runs-on: ubuntu-latest
     steps:
-    - name: step1
+    - name: working
+      id: step1 # esto crea un id para el step que se puede usar en otros steps
       run: echo "my_variable=Hola Mundo" >> $GITHUB_OUTPUT # esto crea una variable de salida que se puede usar en otros jobs
     # se puede usar en otros jobs con ${{ needs.first-jobs.outputs.my_variable }}
 
