@@ -25,4 +25,4 @@ jobs:
 
     steps:
     - name: Hola Mundo
-      run: echo "hola mundo 2 $SALIDA" # esto es para que se pueda usar el resultado del primer job en el segundo job
+      run: echo "hola mundo 2 $Salida" # esto es para que se pueda usar el resultado del primer job en el segundo job
