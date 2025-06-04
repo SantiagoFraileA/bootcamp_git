@@ -1,0 +1,11 @@
+name: deploy to server
+
+on: push
+
+jobs:
+  first-jobs:
+    rund-on: ubuntu-s
+
+    steps:
+    - name: Hola Mundo
+      run: echo "Hola Mundo"
