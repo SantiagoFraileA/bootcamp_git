@@ -12,7 +12,7 @@ jobs:
     # se puede usar en otros jobs con ${{ needs.first-jobs.outputs.my_variable }}
 
     - name: step2
-      uses: echo ${{ steps.step1.outputs.my_variable }} # esto usa la variable de salida creada en el primer step
+      uses: echo "${{ steps.step1.outputs.my_variable }}" # esto usa la variable de salida creada en el primer step
 
   second-jobs:
     if: ${{ github.ref == 'refs/heads/main' }} # esto hace que se ejecute solo si se hace un push a la rama main (solo un if)
