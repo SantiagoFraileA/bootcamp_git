@@ -11,14 +11,14 @@ jobs:
       name: bootcamp-git
 
     steps:
-    - name: Hola Mundo
-      uses: ls -al
+    - name: archivos antes
+      run: ls -al
 
     - name: action
       uses: actions/checkout@v4
 
     - name: archivos
-      uses: ls -al
+      run: ls -al
 
   second-jobs:
     if: ${{ github.ref == 'refs/heads/main' }} # esto hace que se ejecute solo si se hace un push a la rama main (solo un if)
