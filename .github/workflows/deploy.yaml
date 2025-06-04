@@ -11,7 +11,7 @@ jobs:
       name: bootcamp-git
 
     steps:
-    - name: ccheckout
+    - name: Hola Mundo
       uses: ls -al
 
     - name: action
