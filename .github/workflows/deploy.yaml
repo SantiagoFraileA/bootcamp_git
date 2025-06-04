@@ -18,3 +18,15 @@ jobs:
       with:
         name: archivo_prueba
         path: test.log
+
+  second-jobs:
+    runs-on: ubuntu-latest
+    needs: first-jobs # esto es para que el segundo job dependa del primero
+    steps:
+    - name: Descargar artefacto
+      uses: actions/download-artifact@v4 # esto es para descargar el artefacto del primer job
+      with:
+        name: archivo_prueba
+
+    - name: Mostrar contenido del archivo
+      run: cat test.log
