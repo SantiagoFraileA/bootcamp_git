@@ -4,7 +4,7 @@ on: push
 
 jobs:
   first-jobs:
-    rund-on: ubuntu-s
+    runs-on: ubuntu-s
 
     steps:
     - name: Hola Mundo
